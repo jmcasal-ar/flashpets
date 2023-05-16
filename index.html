@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale 1.0" />
+        <meta name="description" content="flash-pets-adoptions">
+        <title id="title">FLASH PETS</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="styles.css" />
+
+        <!-- PRELOADER jQuery --- VER: Primer intento
+        <script src="https://code.jquery.com/jquery-3.6.3.js"></script> -->
+
+
+        <!-- ANIMALS GALLERY w filters start -->
+        
+        <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+        <script>
+            $(document).ready(function() {
+                $(".button").click(function(){
+                    var name = $(this).attr("data-filter");
+                    if(name == "all"){
+                        $(".filter").show("2000'");
+                    }
+                    else{
+                        $(".filter").not("."+name).hide("2000");
+                        $(".filter").filter("."+name).show("2000");
+                    }
+                });
+            });
+        </script>
+
+        <!-- ANIMALS GALLERY w filters end -->
+
+
+        <!-- ANIMACION BUBBLES start -- VER: no funciona - SOLUCION: Target section .class 
+        
+        <script>
+            function bubbles() {
+                var count = 200;
+                var section = document.querySelector('section'); /* ! Target section .class (todavia no) */ 
+                var i = 0;
+                while (i < count){
+                    var bubble = document.createElement('i');
+                    var x = Math.floor(Math.random() * window.innerWidth);
+                    var y = Math.floor(Math.random() * window.innerHeight);
+                    var size = Math.random * 10;
+                    bubble.style.left = x + 'px';
+                    bubble.style.top = y + 'px';
+                    bubble.style.width = 1 + size + 'px';
+                    bubble.style.height = 1 + size + 'px';
+
+                    bubble.style.animationDuration = 5 + size + 's';
+                    bubble.style.animationDelay = -size + 's';
+
+                    section.appendChild(bubble);
+                    i++
+                } 
+            }
+            bubbles()
+        </script>
+
+        
+
+         ANIMACION BUBBLES end --- VER: NO FUNCIONA efecto animacion bubbles -->
+
+
+        <!-- TIPS Gallery --- MAIN JS link -->
+        <script src="main.js"></script> 
+
+        <!-- SCRIPTS end -->
+        
+    </head>
+
+
+    <body id="top">
+
+        <!-- PRELOADER start -->
+    
+        <div class="preload">
+        
+            <div class="preloader-container">
+
+                <img src="assets\images\bolt-icon2.png" class="bolt" id="bolt-icon" alt="bolt-icon-FlashPets">
+
+            </div>
+
+        </div>
+
+        <!-- PRELOADER end -->
+
+
+
+        <!-- HEADER --- NAVBAR SIDE MENU desplegable start -->
+
+        <div class="header">
+
+                <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+
+                <label for="openSidebarMenu" class="sidebarIconToggle">
+
+                    <div class="spinner diagonal part-1"></div>
+                    <div class="spinner horizontal"></div>
+                    <div class="spinner diagonal part-2"></div>
+
+                </label>
+
+            <div id="sidebarMenu">
+
+                <ul class="sidebarMenuInner"> 
+
+                    <li><a href="#banner-top"><h1>FLASH <!--<span></span>-->PETS<h1></a></li> <!-- <span></span> ?AGREGAR img SVG textLogo  -->
+
+                    <li><h5><a href="#container-for-adoption">ADOPTA</a></h5></li>
+
+                    <li><h5><a href="#urgent">URGENTE</a></h5>
+
+                    <span>PERDIDOS</span>
+                    <span>ENCONTRADOS</span>
+                    <span>DONACIÓN</span>
+                    <span>HOGAR</span>
+
+                    </li>
+
+                    <li><h5><a href="#help">AYUDA</a></h5>
+            
+                        <span>TRANSITA</span>
+                        <span>DONA</span>
+                        <span>RESCATA</span>
+                        <span>TRASLADA</span>
+
+                    </li>
+
+                    <li><h5><a href="#events-info">EVENTOS</a></h5></li>
+
+                    <li><h5><a href="#shopSec">TIENDA</a></h5></li>
+
+                    <li><h5><a href="#consejos-info">CONSEJOS</a></h5></li>
+                    
+                    <li><h5><a href="#us-info">NOSOTROS</a></h5></li>
+
+                    <li><h5><a href="#patreon">PATROCINADORES</a></h5></li>
+
+                </ul>
+
+            </div>
+        
+        </div>
+
+        <!-- NAVBAR SIDE MENU desplegable end -->
+
+
+        <!-- NAVBAR Icons modo oscuro, musica, notificaciones -->
+
+
+
+        <!-- INICIO Banner Logo --- parallax on click lleva a Galeria TERMINAR --- -->
+
+        <section class="banner_logo" id="banner-top">
+
+            <div class="bannerBox">
+                <div class="circleLogo">
+                    <div class="flashWrap"><img src="assets\images\flash nobg.png" id="logoFlash" alt="Logo-Flash-Pets"></div>
+                </div>
+            </div>
+
+            <!-- Navegacion 
+            <div class="nav">
+                <a href="#">Logo</a>
+                <img src="" alt="menu_logo">
+            </div>
+            -->
+
+        </section>
+
+        <!-- BUSCADOR + filtros -->
+
+
+
+        <!-- INICIO buttons GRID items 1-5 -->
+
+        <section class="icon_menu">
+            
+            <div class="container">
+            
+                <div class="item sidebar" id="icon-item1">
+                    
+                    <a href="#help"><img src="assets\images\icon-ayuda.png" id="ayuda-iconmenu" alt="ayuda-iconmenu"></a>
+
+                    <!-- TOOLTIP -->
+                    <div id="tooltipText1-wrapper">
+                    <span id="tooltipText1">AYUDA</span>
+                    </div>               
+                
+                </div>
+
+                <div class="item content-1" id="icon-item2">
+                    
+                    <a href="#container-for-adoption"><img src="assets\images\icon-adopta.png"></a>
+
+                    <!-- TOOLTIP -->
+                    <span id="tooltipText2">ADOPTA</span> 
+                
+                </div>
+
+                <div class="item content-2" id="icon-item3">
+                    
+                    <a href="#voluntariadoDiv"><img src="assets\images\icon-transita.png"></a>
+
+                    <!-- TOOLTIP -->
+                    <span id="tooltipText3">TRANSITA</span> 
+
+                </div>
+
+                <div class="item content-3" id="icon-item4">
+                    
+                    <a href="#donandoDiv"><img src="assets\images\icon-dona.png"></a>
+
+                    <!-- TOOLTIP -->
+                    <span id="tooltipText4">DONA</span> 
+                
+                </div>
+
+                <div class="item content-4" id="icon-item5">
+                    
+                    <a href="#urgent"><img src="assets\images\icon-urgente.png" id="urgent-menuImg"></a>
+
+                    <!-- TOOLTIP -->
+                    <span id="tooltipText5">URGENTE</span> 
+                
+                </div>
+
+            </div>
+            
+        </section>
+
+
+        <!--  SECCION grid Nosotros y Consejos buttons -->
+
+        <section class="us_menu">
+            <div class="container-3">
+            
+                <div class="us"><a href="#us-info">NOSOTROS</a></div>
+                <div class="tips"><a href="#consejos-info">CONSEJOS</a></div>
+
+            </div>
+        </section>
+        
+        <!--
+        <div class="">
+            <div class="">
+                
+            </div>
+        </div>
+            
+            <div class="">
+            <div class="">
+                
+            </div>
+        </div>
+        -->
+
+        <!--  -->
+        
+
+
+<!--
+        <div id='center' class="main center">
+            <div class="mainInner">
+            <div>PURE CSS SIDEBAR TOGGLE MENU</div>
+            </div>
+            <div class="mainInner">
+            <div>PURE CSS SIDEBAR TOGGLE MENU</div>
+            </div>
+            <div class="mainInner">
+            <div>PURE CSS SIDEBAR TOGGLE MENU</div>
+            </div>
+        </div>
+-->
+
+    <!-- SECCION GALLERY + category filters -->
+    <section id="adopt-gallery" class="gallery">
+
+        <div style="text-align: center;">
+
+            <div id="container-for-adoption">
+            
+                <h2 id="for-adoption">EN ADOPCIÓN</h2>
+                <h3>Si estás preparado para integrar a un nuevo miembro a tu familia para darle tu amor incondicional y transformar su vida para siempre, 
+                    abajo encontrarás a todos los que necesitan un hogar.
+                    Recuerda primero leer <a href="#consejos-info">aquí</a> todos los consejos e información útil antes de enviar el formulario de adopción.
+                </h3>
+            
+            </div>
+
+            <div class="navigation">
+                <a href="#" data-filter="all" class="button active">TODO</a> 
+                <a href="#" data-filter="dogs" class="button">PERROS</a>
+                <a href="#" data-filter="cats" class="button">GATOS</a>
+            </div>
+            <div class="image_container">
+                <div class="filter dogs">
+                    <img src="assets\images\logopata.jpg">
+                </div>
+                <div class="filter dogs">
+                    <img src="assets\images\logopata.jpg">
+                </div>
+                <div class="filter dogs">
+                    <img src="assets\images\logopata.jpg">
+                </div>
+                <div class="filter cats">
+                    <img src="assets\images\logogato.jpg">
+                </div>
+                <div class="filter cats">
+                    <img src="assets\images\logogato.jpg">
+                </div>
+                <div class="filter cats">
+                    <img src="assets\images\logogato.jpg">
+                </div>
+                <div class="filter cats">
+                    <img src="assets\images\logogato.jpg">
+                </div>
+                <div class="filter cats">
+                    <img src="assets\images\logogato.jpg">
+                </div>
+                <div class="filter cats">
+                    <img src="assets\images\logogato.jpg">
+                </div>
+                <div class="filter dogs">
+                    <img src="assets\images\logopata.jpg">
+                </div>
+                <div class="filter dogs">
+                    <img src="assets\images\logopata.jpg">
+                </div>
+                <div class="filter dogs">
+                    <img src="assets\images\logopata.jpg">
+                </div>
+            </div>
+        </div>
+
+        <div id="popup-btn-adopt">
+            <!-- Boton para abrir el formulario popup -->
+            <button class="open-button" onclick="openForm()">ADOPTAR</button>
+        </div>
+
+    </section>
+
+
+    <!-- SECCION URGENTE start -->
+    <section class="urgent" id="urgent">
+
+        <!-- Urgente 1 -->
+        <div class="bannerUrgente1">
+
+            <h2 class="glow">URGENTE</h2>
+            <h3>Los casos que encontrarás aquí tienen poco tiempo y necesitan tu ayuda</h3>
+
+        </div>
+
+        <div class="text perdidos">
+
+            <h2>Perdidos</h2>
+
+        </div>
+
+        <div class="galleryPerdidos">
+
+            <div class="horizontal-scroll-wrapper perdidos">
+            
+                <div class="scroll-item"><img src="assets\images\petpaw.png" class="thumbnail" id="perdido1" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" class="thumbnail" id="perdido2" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" class="thumbnail" id="perdido3" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" class="thumbnail" id="perdido4" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" class="thumbnail" id="perdido5" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" class="thumbnail" id="perdido6" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" class="thumbnail" id="perdido7" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" class="thumbnail" id="perdido8" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" class="thumbnail" id="perdido9" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" class="thumbnail" id="perdido10" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" class="thumbnail" id="perdido11" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" class="thumbnail" id="perdido12" alt=""></div>
+
+            </div>
+
+        </div>
+
+        <div class="text encontrados">
+
+            <h2>Encontrados</h2>
+
+        </div>
+
+        <div class="galleryEncontrados">
+
+            <div class="horizontal-scroll-wrapper encontrados">
+
+                <div class="scroll-item"><img src="assets\images\petpaw.png" class="thumbnail" id="encontrado1" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" class="thumbnail" id="encontrado2" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" class="thumbnail" id="encontrado3" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" class="thumbnail" id="encontrado4" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" class="thumbnail" id="encontrado5" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" class="thumbnail" id="encontrado6" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" class="thumbnail" id="encontrado7" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" class="thumbnail" id="encontrado8" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" class="thumbnail" id="encontrado9" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" class="thumbnail" id="encontrado10" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" class="thumbnail" id="encontrado11" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" class="thumbnail" id="encontrado12" alt=""></div>
+
+            </div>
+
+        </div>
+
+        <!-- Urgente 2 -->
+        <div class="bannerUrgente2">
+
+            <div class="bnr-title">
+                <h3>
+                    NECESITAN TU COLABORACIÓN CON LOS GASTOS 
+                </h3>
+            </div>
+
+        </div>
+
+        <div class="galleryDona" id="urgent-Dona">
+
+            <div class="horizontal-scroll-wrapper dona">
+
+                <div class="scroll-item"><img src="assets\images\petpaw.png" id="dona1" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" id="dona2" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" id="dona3" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" id="dona4" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" id="dona5" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" id="dona6" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" id="dona7" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" id="dona8" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" id="dona9" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" id="dona10" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" id="dona11" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" id="dona12" alt=""></div>
+
+            </div>
+
+        </div>
+
+        <!-- Urgente 3 -->
+        <div class="bannerUrgente3" id="urgent-AyT">
+
+            <div class="bnr-title">
+                <h3>
+                    NECESITAN UN HOGAR LO ANTES POSIBLE<br>
+                </h3>
+            </div>
+
+        </div>
+
+        <div class="galleryAyT">
+
+            <div class="horizontal-scroll-wrapper ayt">
+
+                <div class="scroll-item"><img src="assets\images\petpaw.png" id="ayt1" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" id="ayt2" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" id="ayt3" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" id="ayt4" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" id="ayt5" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" id="ayt6" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" id="ayt7" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" id="ayt8" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" id="ayt9" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" id="ayt10" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" id="ayt11" alt=""></div>
+                <div class="scroll-item"><img src="assets\images\petpaw.png" id="ayt12" alt=""></div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- SECCION URGENTE end  -->
+
+
+
+    <!--  SECCION EVENTOS start -->
+
+    <section class="events-info" id="events-info">
+
+        <div>
+
+            <div class="titleEventos">
+                <h2>
+                    EVENTOS
+                </h2>
+            </div>
+
+            <div class="eventosAll">
+                <h3>
+                    Todos los eventos para participar y construir comunidad
+                </h3>
+            </div>
+
+        </div>
+
+        <div class="events_menu">
+            <div class="horizontal-scroll-wrapper">
+            
+                <div class="scroll-item">FERIAS</div>
+                <div class="scroll-item">JUNTADAS</div>
+                <div class="scroll-item">CAMPAÑAS</div>
+                <div class="scroll-item">RIFAS</div>
+                <div class="scroll-item">SORTEOS</div>
+
+            </div>
+        </div>
+
+        <!-- CONTINUAR CAROUSEL mas completo con imagenes reales de las ONGs y sus Eventos 
+
+        <div class="container-carousel-multi">
+
+              CAROUSEL 1 Ferias 
+            <div class="carousel-multi-title">
+
+                <h4>Ferias</h4>
+
+            </div>
+            
+            <div class="carousel-multi">
+
+                <img src="assets\images\question-icon.png" id="event1-img1" alt="event-img">
+                <img src="assets\images\question-icon.png" id="event1-img2" alt="event-img">
+                <img src="assets\images\question-icon.png" id="event1-img3" alt="event-img">
+                <img src="assets\images\question-icon.png" id="event1-img4" alt="event-img">
+
+            </div>
+
+              CAROUSEL 2 Juntadas 
+            <div class="carousel-multi-title">
+
+                <h4>Juntadas</h4>
+
+            </div>
+            
+            <div class="carousel-multi">
+
+                <img src="assets\images\question-icon.png" id="event2-img1" alt="event-img">
+                <img src="assets\images\question-icon.png" id="event2-img2" alt="event-img">
+                <img src="assets\images\question-icon.png" id="event2-img3" alt="event-img">
+                <img src="assets\images\question-icon.png" id="event2-img4" alt="event-img">
+
+            </div>
+
+              CAROUSEL 3 Campaña de castraciones 
+            <div class="carousel-multi-title">
+
+                <h4>Campaña de castraciones</h4>
+
+            </div>
+            
+            <div class="carousel-multi">
+
+                <img src="assets\images\question-icon.png" id="event3-img1" alt="event-img">
+                <img src="assets\images\question-icon.png" id="event3-img2" alt="event-img">
+                <img src="assets\images\question-icon.png" id="event3-img3" alt="event-img">
+                <img src="assets\images\question-icon.png" id="event3-img4" alt="event-img">
+
+            </div>            
+
+              CAROUSEL 4 Rifas y Sorteos 
+            <div class="carousel-multi-title">
+
+                <h4>Rifas y Sorteos</h4>
+
+            </div>
+            
+            <div class="carousel-multi">
+
+                <img src="assets\images\question-icon.png" id="event4-img1" alt="event-img">
+                <img src="assets\images\question-icon.png" id="event4-img2" alt="event-img">
+                <img src="assets\images\question-icon.png" id="event4-img3" alt="event-img">
+                <img src="assets\images\question-icon.png" id="event4-img4" alt="event-img">
+
+            </div>
+
+
+
+        </div>
+        -->
+
+
+        <!--  DIV slider Todos los Eventos Carousel Simplificado sin fotos reales de las ONGs -->
+               
+
+    </section>
+    
+    <!-- SECCION EVENTOS end  -->
+
+
+    <!-- SECCION AYUDA start -->
+
+    <section class="help" id="help">
+
+        <div>
+
+            <div class="titleAyuda">
+                <h2>
+                    AYUDA
+                </h2>
+            </div>
+
+            <div id="donandoDiv" class="donando">
+                <h3>
+                    Donando
+                </h3>
+
+                <p>
+                    Los rescates, traslados, estudios, tratamientos veterinarios y operaciones, etc. implican un gran presupuesto.
+                    Por ello es que necesitamos de ayuda económica para afrontar los distintos problemas y necesidades desde el proyecto FLASH PETS
+                    y todas las ONGs y asociaciones que lo conforman.
+                </p>
+
+                <button><a href="#ongs-all">DONAR</a></button>
+
+            </div>
+
+            <div class="adoptando">
+
+                <h3>
+                    Adoptando
+                </h3>
+
+                <p>
+                    La principal manera para cambiar estructuralmente la problemática que atraviesan los animales y la sociedad 
+                    es adoptar de forma definitiva, ofreciendo tu hogar para que sea su refugio y dándole todos los cuidados necesarios por el resto de su vida.
+                </p>
+
+                <!-- Boton redirecciona a Galeria de Adopciones -->
+                <button><a href="#adopt-gallery">ADOPTAR</a></button>
+
+                <!--<button><a>ADOPTAR</a></button>-->
+
+            </div>
+
+            <div class="patrocinando">
+                <h3>
+                    Patrocinando
+                </h3>
+
+                <p>
+                    Los patrocinadores de FLASH PETS son una parte del equipo que, a cambio de visualización o publicidad,
+                    aportan económicamente, facilitan productos o hacen de ciertos servicios más accesibles para garantizar el bienestar y la evolución de cada caso en particular bajo el cuidado y observación de los rescatistas, voluntarios y ONGs.<br>
+                    Clickeando abajo, podrás entrar en contacto para cualquier propuesta comercial publicitaria o para apoyarnos contribuyendo monetariamente a la causa.
+                </p>
+
+                <button><a href="#patreon">IR</a></button>
+
+            </div>
+
+            <div id="voluntariadoDiv" class="voluntariado">
+                <h3>
+                    Voluntariado
+                </h3>
+
+                <p>
+                    Una forma de ayudar a los animales y a las ONGs es ofreciéndote como voluntario para<br>
+                    <ul class="listVoluntariado">
+                        <li>Rescatar</li>
+                        <li>Transitar</li>
+                        <li>Trasladar</li>
+                    <ul>
+                </p>
+
+                <p>
+                    Contáctate con las ONGs directamente
+                </p>
+
+                <button><a href="#ongs-all">CONTACTAR</a></button>
+
+                <p>
+                    O completa este formulario con el Asunto "Rescate", "Transitar", "Traslado" o todas las anteriores
+                </p>
+
+                <button><a>COMPLETAR</a></button>
+
+            </div>
+
+            <div class="comprando">
+                <h3>
+                    Comprando en la Tienda
+                </h3>
+
+                <p>
+                    Comprando cualquiera de los productos de la Tienda ayudas a recaudar fondos para insumos o servicios.<br> 
+                    Colaboras en el financiamiento de rescates y en la cobertura de costos veterinarios, de tránsito y traslado, etc.
+                </p>
+                <p>
+                    Esto es a beneficio de los rescatados. Las ganancias son destinadas a las ONGs y a las empresas y emprendimientos que trabajan por mejorar la calidad de vida de los animales ofertando:<br>
+                    <ul class="helpShopList">
+                        <li>Productos especiales para las distintas razas y especies</li>
+                        <li>Ropa para las distintas estaciones del año</li>
+                        <li>Productos para cubrir las necesidades básicas (alimento, higiene y cuidado dental, juguetes, correas, etc.)</li>
+                    </ul>            
+                </p>
+
+                <button><a href="#shopSec">COMPRAR</a></button>
+
+            </div>
+            
+        </div>
+    
+    </section>
+
+    <!-- SECCION AYUDA end -->
+
+
+    <!-- SECCION TIENDA start -->
+    <section id="shopSec" class="shopAll">
+
+        <div class="">
+
+            <div>
+                <h2>
+                    COLABORA COMPRANDO EN LA TIENDA
+                </h2>
+
+                <p>
+                    (Aún no disponible. Trabajando en la Tienda)
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="shopWrapper">
+
+            <div class="shop">
+
+                <div>
+
+                </div>
+
+                <div></div>
+                <div></div>
+
+            </div>
+
+        </div>
+
+        <div class="">
+
+            <div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SECCION TIENDA end -->
+
+
+    <!-- DIV ADS start 
+
+    <div class="ads">
+
+        <div class=""adsWrapper>
+
+            <div class="ad">
+
+            </div>
+            <div class="ad">
+
+            </div>
+            <div class="ad">
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+     DIV ADS end -->
+
+    <!-- CONSEJOS + INFO start -->
+
+    <section class="consejos-info" id="consejos-info">
+
+        <div class="container-consejos-info">
+        
+            
+            <div>
+
+                <h2>
+                    
+                    CONSEJOS E INFORMACIÓN ÚTIL
+
+                </h2>
+
+                <h3>
+
+                    En este segmento podrás concientizarte acerca de la problemática que atraviesan los animales, conocer el rol de la sociedad en este contexto 
+                    y todo lo que puedes hacer para ayudar<br>
+                    ¡y darle todo lo que necesite a tu peludo!
+
+                </h3>
+
+                <div class="info-tips-images">
+
+                    (Aún no disponible. Trabajando en el Diseño Gráfico)
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONSEJOS + INFO end -->
+
+    <!-- SECCION CONSEJOS GALERIA ANIMADA
+
+    <section class="tipsGallery" id="consejos-info">
+    
+     PROXIMAMENTE Image Wrapper start 
+        <div class="tips-img-wrapper">
+            <span style="--a: 1">
+                <img src="images\consejos1.png" alt="imgconsejo1">
+            </span>
+            <span style="--a: 2">
+                <img src="images\consejos2.png" alt="imgconsejo2">
+            </span>
+            <span style="--a: 3">
+                <img src="images\consejos3.png" alt="imgconsejo3">
+            </span>
+            <span style="--a: 4">
+                <img src="images\consejos4.png" alt="imgconsejo4">
+            </span>
+            <span style="--a: 5">
+                <img src="images\consejos5.jpg" alt="imgconsejo5">
+            </span>
+            <span style="--a: 6">
+                <img src="images\consejos6.jpg" alt="imgconsejo6">
+            </span>
+            <span style="--a: 7">
+                <img src="images\consejos7.png" alt="imgconsejo7">
+            </span>
+            <span style="--a: 8">
+                <img src="images\consejos8.png" alt="imgconsejo8">
+            </span>
+            <span style="--a: 9">
+                <img src="images\consejos9.png" alt="imgconsejo9">
+            </span>
+        </div>
+    
+        Image Wrapper end 
+
+     PROXIMAMENTE Button Wrapper start 
+        <div class="btn-wrapper-tips">
+            <button type="button" class="btn" id="prev">Anterior</button>
+            <button type="button" class="btn" id="next">Siguiente</button>
+        </div>
+    
+        Button Wrapper end 
+
+    </section>
+
+    CONSEJOS / INFO UTIL GALERIA ANIMADA end --- TERMINAR -->
+
+
+    <!--  SECCION NOSOTROS start -->
+
+    <section class="us-info" id="us-info">
+
+        <div class="flash-pets-info">
+
+            <h2>NOSOTROS</h2>
+
+            <h3>FLASH PETS</h3>
+
+            <div>
+                <span>
+                Es una iniciativa para solucionar la problemática de animales en la calle, abandonados, explotados, maltratados,
+                que sufren por la negligencia, violencia y crueldad en el mundo que hemos creado, así como de enfermedades trayendo problemas de salubridad para ellos y 
+                todos los habitantes.<br>
+                </span>
+            </div>
+            <div>
+                <span>
+                El objetivo es también unir, potenciar y concientizar a las comunidades para cumplir con el rol de cuidado de la naturaleza y animales que nos rodean, 
+                y obtener una sociedad más justa y humanitaria para con los animales y el medio ambiente sumando voluntarios que trabajan 
+                para mejorar la situación.<br>
+                </span>
+            </div>
+            <div>
+                <span>
+                Además de salvar una vida, apoyar el valioso trabajo de las organizaciones y de reducir el número de animales en los refugios, en las calles y 
+                en hogares donde los maltratan, adoptar trae beneficios a la salud física y emocional:<br> 
+            
+
+                    <ul class="benefits-list">
+                        <li>Ayuda a tener una vida activa y reduce el riesgo de ansiedad y depresión</li>
+                        <li>Los animales pueden generar fuertes lazos y aportar al bienestar general de personas con TEPT, autismo y otras condiciones</li>
+                        <li>Mejoran el estado de ánimo, reducen el estrés, contribuyen a desarrollar y expresar mejor las emociones</li>
+                        <li>Aportan al bienestar social, emocional, mental y físico</li>
+                    </ul>
+                </span>
+            </div>
+            <div>
+                <span>
+                FLASH PETS es un proyecto con un fin social, económico, humanitario y moral.
+                </span>
+            </div>
+
+            <div class="flash-info">
+
+                <h4>FLASH</h4>               
+                
+                                
+                <div class="flash-img-wrapper">
+                    <div class="overlay-box">
+                        <img src="assets\images\flash2.jpeg" id="flash2">
+                        <img src="assets\images\flash1.jpeg" id="flash1">
+                        <img src="assets\images\flash3.jpeg" id="flash3">
+                    </div>
+                </div>
+
+                <span>
+                    Flash fue rescatado de la explotación y abandono de los galgueros.
+                    Sumarlo a nuestra familia desencadenó muchas otras adopciones e inspiró la creación de este proyecto para cambiar la vida de muchísimos más que aún esperan tener una oportunidad.
+                </span>
+
+            </div>
+
+        </div>
+
+        <div id="ongs-all" class="ongs-info">
+
+                <div class="container-ongs-info">
+                
+                    
+                    <div>
+        
+                        <h2>
+                            
+                            ONGS
+        
+                        </h2>
+        
+                        <h3>
+        
+                            ¡Aquí están todas las ONGs que se suman al proyecto!
+        
+                        </h3>
+        
+        
+                    </div>
+        
+                </div>
+        
+            </section>
+
+        </div>
+
+    </section>
+
+    <!-- SECCION NOSOTROS end  -->    
+
+    
+    <!-- LOGIN start --- TERMINAR 
+
+    <section class="login">
+
+        <div>
+            
+        </div>
+
+    </section>
+
+    LOGIN end 
+
+
+     USER PROFILE start --- TERMINAR 
+
+    <section class="profile">
+
+        <div>
+
+        </div>
+
+    </section>
+
+     USER PROFILE end -->
+
+    
+    <!-- SECCION PATROCINADORES start -->
+
+    <section class="patreon" id="patreon">
+
+        <div class="patreonWrapper one">
+
+            <div>
+                <h2>
+                    ¡Conoce a nuestros patrocinadores!
+                </h2>
+
+                <div>
+                    <div id="sponsor1">
+                        <a href="https://instagram.com/fly.english.tips?igshid=YmMyMTA2M2Y=" target="_blank"><img src="assets\images\flyEnglish.jpeg" id="logo-flyEnglish" alt="logoFlyEnglish"></a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- UI: Patrocinar -->
+            <div>
+                
+                <h2>
+                    PATROCINAR
+                </h2>
+
+            </div>
+
+            <div id="how-to-patreon">
+
+                <h3>
+                    Con la colaboración de los patrocinadores es posible FLASH PETS.<br>
+                    Entra en contacto con la creadora y participa en el crecimiento de este proyecto:
+                </h3>
+
+                <div class="contact-dev">
+
+                    <p>
+                        flashpets.app@gmail.com
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Link Cafecito y Patreon -->
+            <div class="cafe-patreon-wrapper">
+
+                <h3>
+                    Puedes apoyar a FLASH PETS a través de Patreon y Cafecito
+                </h3>
+
+                <h4>CAFECITO</h4>
+                <a href="https://cafecito.app/flashpets" target="_blank"><img src="assets\images\cafecito.png" id="logoCafecito" alt="logo-Cafecito"></a>
+
+                <h4>PATREON</h4>
+                <a><img src="assets\images\patreon.png" id="logoPatreon" alt="logo-Patreon"></a>
+                <div>(Aún no está disponible)</div>
+
+
+            </div>
+
+        </div>
+
+        <!--
+        <div class="patreonWrapper two">
+
+            <div>
+                <h2>
+                    
+                </h2>
+            </div>
+
+            <div>
+                
+            </div>
+
+        </div>
+        -->
+
+    </section>
+
+    <!-- SECCION PATROCINADORES end  -->
+
+    <!-- SECCION POPUP FORM start  -->
+
+    <div class="form-container">
+
+        <div class="form-popup" id="myForm">
+            <form action="/action_page.php" class="form-container">
+
+                <div class="formTitle">
+                    <h7>Formulario de adopción</h7>
+                </div>
+
+                <div class="formB">
+                    <label for="pet-name"><b>Nombre de quien adoptarías</b></label>
+                    <input type="text" placeholder="Ingrese el nombre del animal" name="pet-name" required>
+
+                    <label for="name-surname"><b>Tu Nombre y Apellido</b></label>
+                    <input type="text" placeholder="Ingrese nombre y apellido del adoptante" name="name-surname" required>
+
+
+                    <label for="email"><b>Email</b></label>
+                    <input type="email" placeholder="Ingrese su Email" name="email" required>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn">ENVIAR</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">CERRAR</button>
+                    <!-- completar código para msg Popup dentro del btn 'ENVIAR' / data-toggle="modal" data-target="#successPopup" -->
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- SECCION POPUP FORM end  -->
+
+
+<!--
+    <-- SECCION FORMULARIO start  --
+
+
+
+    <-- Button trigger modal --
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#successPopup">
+        ADOPTAR
+    </button>
+
+    <div id="successPopup" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h6 class="modal-title">GRACIAS POR DECIDIR ADOPTAR</h6>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div>¡Ya estás cerca de sumar un nuevo integrante a tu familia!</div>
+            </div>
+            <-- FORM  --
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Enviar</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <-- SECCION FORMULARIO end  --
+-->
+
+    </body>
+</html>
